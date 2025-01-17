@@ -18,13 +18,13 @@ function setTable(data) {
     clearTableRows(table);
 
     if (data.length > 0) {
-
         for (const board of data) {
 
             let seq = board.seq;
             let title = board.title;
-            let user = board.reguser;
-            let date = board.regdate;
+            let user = board.regUser;
+            let date = board.regDate;
+
 
             const row = table.insertRow();
 

@@ -23,8 +23,8 @@
     <!-- UPDATE -->
     <update id="update" parameterType="io_groom.mybatis.board.model.Board">
         UPDATE board
-        SET title = #{board.title}, contents = #{board.contents}
-        WHERE seq = #{board.seq}
+        SET title = #{Board.title}, contents = #{Board.contents}, reg_user = #{Board.regUser}
+        WHERE seq = #{Board.seq}
     </update>
 
     <!-- DELETE -->

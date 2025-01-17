@@ -4,9 +4,8 @@ import io_groom.mybatis.api.board.service.BoardService;
 import io_groom.mybatis.board.model.Board;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +29,15 @@ public class BoardRestController {
         log.debug("list size: {}", list.size());
         log.debug("test ");
         return list;
+    }
+
+    @PutMapping("/boards")
+    public Board update(@RequestBody Board board) {
+        return boardService.updateBoard(board);
+    }
+
+    @DeleteMapping("/boards/{seq}")
+    public boolean delete(@PathVariable long seq) {
+        return boardService.deleteBoard(seq);
     }
 }

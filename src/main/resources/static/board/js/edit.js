@@ -8,7 +8,7 @@ function updatePost() {
         contents: form.querySelector('#contents').value,
         regUser: form.querySelector('#regUser').value
     };
-
+    console.log(data);
     fetch(`/api/boards`, {
         method: 'PUT',
         headers: {
